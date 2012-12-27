@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <!-- /*
+ * Copyright (c) 2011 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy
+ * of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */ -->
+  <ModulePrefs title="Virtual Joystick">
+    <Require feature="rpc"/>
+    <Require feature="views"/>
+  </ModulePrefs>
+  <Content type="html"><![CDATA[
+<!DOCTYPE html>
+
+<style type="text/css">
+    #joystick_canvas
+    {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+</style>
+
+<!-- The hangout API JavaScript. Always include this first -->
+<script src="//hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.1"></script>
+
+<!-- The ROS JavaScript API -->
+<!-- <script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/tags/brown-ros-pkg/rosbridge/ros.js"></script> -->
+<script type="text/javascript" src="http://files.yujinrobot.com/tmp/hangout/virtual_joystick/static/ros.js"></script>
+
+<!-- The JavaScript for this app. This must always be a full URL not a
+     relative path.
+     Tip: You can load it from a local web server such as
+     http://localhost/app.js for faster single user development -->
+<script> _DEBUG_ = false </script>
+<script type="text/javascript" src="http://files.yujinrobot.com/tmp/hangout/virtual_joystick/static/app.js"></script>
+
+<!-- Virtual Joystick -->
+<div style="float: left; padding: 20px 20px 20py">
+  <canvas id="joystick_canvas" width="300" height="300"></canvas>
+
+  <script src="http://files.yujinrobot.com/tmp/hangout/virtual_joystick/static/virtualjoystick.js"></script>
+  <script> 
+    console.log("touchscreen is", VirtualJoystick.touchScreenAvailable() ? "available" : "not available");
+    var joystick = new VirtualJoystick({
+      container : document.getElementById('joystick_canvas'),
+      mouseSupport : true
+    });
+  </script>
+</div>
+
+<!-- ROS connection -->
+<div style="float: left; padding: 0px 10px">
+  <form name="action="" method="GET">
+    <table>
+      <tr>
+        ROS bridge connection and topics
+      </tr>
+      <tr>
+        <td>host: </td> <td><input type="text" name="host"  value="localhost" size="15" maxlength="50" style="width:80px;"/></td>
+        <td>port: </td> <td><input type="text" name="port"  value="9090"      size="15" maxlength="5"  style="width:80px;"/></td>
+      </tr>
+      </tr>
+        <td>speed:</td> <td><input type="text" name="speed" value="/cmd_vel"  size="15" maxlength="50" style="width:80px;"/></td>
+        <td>odom: </td> <td><input type="text" name="odom"  value="/odom"     size="15" maxlength="50" style="width:80px;"/></td>
+      </tr>
+      <tr>
+        <td colspan=3><span id="odometry"></span></td>
+        <td><input type="button" name="(re)connect" value="connect" onClick="connectToROS(this.form)" style="width:80px;"/></td>
+      </tr>
+      <tr>
+        <td colspan=4><span id="ros_msg"></span></td>
+      </tr>
+    </table>  </form>
+</div>
+
+]]></Content>
+</Module>
