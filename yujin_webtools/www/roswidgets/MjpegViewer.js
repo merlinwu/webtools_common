@@ -1,3 +1,8 @@
+/*
+    Originally implemented by Jonathan Mace (jcmace@cs.brown.edu)
+    
+    Amd-fied and maintained by Jihoon Lee
+ */
 
 
 define(["dojo/_base/declare",
