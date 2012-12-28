@@ -1,6 +1,5 @@
 /*
-   Virtual Joystick
-   Need to check who wrote this class.
+   Se License file
  */
 
 _DEBUG_ = false;
