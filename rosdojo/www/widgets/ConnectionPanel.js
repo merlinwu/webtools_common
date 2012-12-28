@@ -11,12 +11,11 @@ require({ packages: [
             ]
         });
 
-
-define(["dojo","dojo/_base/declare","dojo/_base/lang","dijit/_WidgetBase","dijit/_Templated","dojo/cookie",
+define(["dojo","dojo/_base/declare","dojo/_base/lang","dijit/_WidgetBase","dijit/_TemplatedMixin","dojo/cookie",
         "dojo/text","dijit/form/ComboBox","dijit/form/Button","dijit/Tooltip", "rosdojo/utils/Loader","rosjs/ros","dojo/text!./templates/ConnectionPanel.html"],
-function(dojo,declare,lang,_Widget,_Templated,cookie,cache,ComboBox,Button,Tooltip,Loader,ROS,template)
+function(dojo,declare,lang,_Widget,_TemplatedMixin,cookie,cache,ComboBox,Button,Tooltip,Loader,ROS,template)
 {
-    var ConnectionPanel =  declare("rosdojo.widgets.ConnectionPanel",[_Widget, _Templated ], {
+    var ConnectionPanel =  declare("rosdojo.widgets.ConnectionPanel",[_Widget, _TemplatedMixin], {
     
         templateString : template,
     
@@ -27,8 +26,8 @@ function(dojo,declare,lang,_Widget,_Templated,cookie,cache,ComboBox,Button,Toolt
             window.ros = new ROS();
         }
 
-        var cssfile = dojo.moduleUrl("rosdojo.widgets","css/roswidgets.css");
-        Loader.loadCSS(cssfile);
+//        var cssfile = dojo.moduleUrl("rosdojo.widgets","css/roswidgets.css");
+        Loader.loadCSS("rosdojo/widgets/css/roswidgets.css");
 
         // Create the constituent dijit widgets
         var instructions = "Enter the URL of your rosbridge server, in the form hostname:port";
@@ -199,7 +198,7 @@ function(dojo,declare,lang,_Widget,_Templated,cookie,cache,ComboBox,Button,Toolt
             });
         }
         this.dropdown.store.setData(data);
-        this.dropdown.setValue(urls[0]);
+        this.dropdown.set('value',urls[0]);
     },
     
     _onConnect : function() {
