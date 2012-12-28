@@ -5,18 +5,17 @@ define(["dojo/_base/declare",
         "dijit/_TemplatedMixin",
         "dojo/dom",
         "dojo/dom-class",
-        "yujin_webtools/widgets/Loader",
         "dojo/text!./templates/Arrows.html",
         ],
-function(declare, lang,widgetbase,_TemplatedMixin,dom,domClass,Loader,template)
+function(declare, lang,widgetbase,_TemplatedMixin,dom,domClass,template)
 {
-    var ctrl = declare("yujin_webtools.controller.Arrows",[widgetbase, _TemplatedMixin], {
+    var ctrl = declare("rosdojo.controller.Arrows",[widgetbase, _TemplatedMixin], {
             templateString : template,
 
             linear : null,
             angular : null,
             buttons : null,
-            topic : '/base_controller/command',
+            topic : '/cmd_vel',
             messageType : '/geometry_msgs/Twist',
 
             postCreate : function() {

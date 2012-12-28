@@ -6,7 +6,7 @@ define(["dojo/_base/declare",
         ],
 function(declare,widgetbase,Button,on)
 {
-    var navc = declare("yujin_webtools.widgets.NavigationControl",[widgetbase],
+    var navc = declare("rosdojo.navigation.NavigationControl",[widgetbase],
         { 
             postCreate : function() {
                 this.initButton = new Button({label:"Init Pose"});

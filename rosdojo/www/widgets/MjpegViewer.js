@@ -4,6 +4,10 @@
     Amd-fied and maintained by Jihoon Lee
  */
 
+require({ packages: [
+            { name : "mjpegcanvasjs", location:"/robotwebtools_amd/mjpegcanvasjs"}
+            ]
+        });
 
 define(["dojo/_base/declare",
         "dojo/_base/lang",
@@ -14,7 +18,7 @@ define(["dojo/_base/declare",
         ],
 function(declare,lang,domClass,domStyle,_widgetbase,MjpegCanvas)
 {
-    var MjpegViewer = declare("roswidgets.MjpegViewer",[_widgetbase], {
+    var MjpegViewer = declare("rosdojo.widgets.MjpegViewer",[_widgetbase], {
         host :  null,
         topic : null,
         label : null,

@@ -9,7 +9,7 @@ define(["dojo/_base/declare",
         ],
 function(declare,widgetbase,DropDownButton,DropDownMenu,MenuItem,TooltipDialog,on,NavControl)
 {
-    var popup = declare("yujin_webtools.widgets.NavigationPopup",[widgetbase],
+    var popup = declare("rosdojo.navigation.NavigationPopup",[widgetbase],
         {
             postCreate : function()
             {

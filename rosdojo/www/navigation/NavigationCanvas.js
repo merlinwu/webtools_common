@@ -5,11 +5,11 @@ define(["dojo/_base/declare",
         "dojo/dom",
         "dojo/dom-class",
         "nav2djs/nav2d",
-        "./Loader",
+        "rosdojo/utils/Loader",
        ],
 function(declare,lang,widgetbase,dom,domClass,Nav2D,Loader)
 {
-  var navCanvas = declare("yujin_webtools.widgets.NavigationCanvas",[widgetbase],
+  var navCanvas = declare("rosdojo.navigation.NavigationCanvas",[widgetbase],
     {
       canvasid  : null,
       canvaswidth : 640,
@@ -23,7 +23,7 @@ function(declare,lang,widgetbase,dom,domClass,Nav2D,Loader)
       roboticon : null,
 
       postCreate : function() {
-        Loader.loadCSS("yujin_webtools/widgets/css/navcanvas.css");
+        Loader.loadCSS("rosdojo/navigation/css/navcanvas.css");
         ros.on('connection',lang.hitch(this,this.onConnect));
         ros.on('close',lang.hitch(this,this.onClose));
 
