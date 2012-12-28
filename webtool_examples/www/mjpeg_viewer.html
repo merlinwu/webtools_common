@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<title>MJPeg Viewer</title>
+<!-- load Dojo and the default dojo theme, claro -->
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="../dojo_common/dijit/themes/claro/claro.css"/>
+<script src="../yujin_webtools/config.js"> </script>
+<script src="../dojo_common/dojo/dojo.js.uncompressed.js"></script>
+<script>
+        var ros;
+        var mjpeg;
+		require({
+        packages: [ 
+                    { name:"virtualjoystick", location: "/yujin_webtools/virtualjoystick"},
+                    { name:"roswidgets", location: "/rosdojo/widgets"},
+                ]},
+        [
+            "dojo/parser",
+            "dojo/ready",
+            "roswidgets/ConnectionPanel",
+            "roswidgets/MjpegViewer",
+		    ],
+        function(parser,ready,Cpanel,MjpegViewer)
+        {
+            var initialize = function() {
+                parser.parse();
+            }
+
+            ready(initialize);
+        }
+        );
+</script>
+</head>
+<body class="claro" style="font: 14px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;">
+	<div id="headers" class="headers">
+    <img class="logo" src="img/logo.jpg"></img>
+    <p class="logo2"> Web Teleop</p>
+    <div class="webtools">
+        <div class="connectionpanel" data-dojo-type="rosdojo.widgets.ConnectionPanel"></div>
+    </div>
+	</div>
+    <div id="body" class="middlepanel">
+      <center>
+        <div data-dojo-type="rosdojo.widgets.MjpegViewer" data-dojo-props="topic:'/camera/rgb/image_color', width:512, height:384, quality:70">
+        </div>
+      </center>
+    </div>
+  </div>
+</body>
+</html>
