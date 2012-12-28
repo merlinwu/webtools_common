@@ -20,9 +20,9 @@ function(declare,lang,widgetbase,Button,on,NavControl)
                 dojo.connect(this.goalButton,"onClick",this,"setGoalClicked");
                 dojo.connect(this.cancelButton,"onClick",this,"cancelGoalClicked");
 
-                this.initButton.setDisabled(true);
-                this.goalButton.setDisabled(true);
-                this.cancelButton.setDisabled(true);
+                this.initButton.set('disabled',true);
+                this.goalButton.set('disabled',true);
+                this.cancelButton.set('disabled',true);
 
                 this.domNode.appendChild(this.initButton.domNode);
                 this.domNode.appendChild(this.goalButton.domNode);
@@ -30,15 +30,15 @@ function(declare,lang,widgetbase,Button,on,NavControl)
             },
 
             onConnect : function() {
-                this.initButton.setDisabled(false);
-                this.goalButton.setDisabled(false);
-                this.cancelButton.setDisabled(false);
+                this.initButton.set('disabled',false);
+                this.goalButton.set('disabled',false);
+                this.cancelButton.set('disabled',false);
             },
 
             onClose : function() {
-                this.initButton.setDisabled(true);
-                this.goalButton.setDisabled(true);
-                this.cancelButton.setDisabled(true);
+                this.initButton.set('disabled',true);
+                this.goalButton.set('disabled',true);
+                this.cancelButton.set('disabled',true);
             },
 
             createButtons : function() 
