@@ -3,6 +3,8 @@ dojoConfig = {
     "dojo-debug-messages": true
   },
 
+  async: true,
+
   parseOnLoad: false,
 
   aliases: [
@@ -19,6 +21,7 @@ dojoConfig = {
     { name:"actionlibjs", location:"/robotwebtools_amd/actionlibjs"},
     { name:"interactivemarersjs", location:"/robotwebtools_amd/interactivemarersjs"},
     { name:"nav2djs", location:"/robotwebtools_amd/nav2djs"},
+    { name:"yujin_webtools", location:"/yujin_webtools"},
   ],
 }
 
