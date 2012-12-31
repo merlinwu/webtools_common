@@ -1,0 +1,10 @@
+<stack>
+  <description brief="Yujin Robot's common webtools">
+    Common Javascript framework to build a new web app.
+  </description>
+  <author>Maintained by Jihoon Lee</author>
+  <license>BSD</license>  
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/webtools_common</url>
+  <depend stack="rosjs" /> 
+</stack>
