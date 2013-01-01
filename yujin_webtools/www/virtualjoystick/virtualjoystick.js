@@ -1,5 +1,5 @@
 /*
-   Se License file
+   See License file
  */
 
 _DEBUG_ = false;
