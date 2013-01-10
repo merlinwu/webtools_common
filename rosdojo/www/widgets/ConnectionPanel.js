@@ -100,9 +100,9 @@ function(dojo,declare,lang,_Widget,_TemplatedMixin,cookie,cache,ComboBox,Button,
     
     onConnecting : function() {
         // Hide relevant portions of the widget
-        this.dropdown.setDisabled(true);
-        this.connectButton.setDisabled(true);
-        this.connectButton.setLabel("Connecting...");
+        this.dropdown.set('disabled',true);
+        this.connectButton.set('disabled',true);
+        this.connectButton.set('label',"Connecting...");
     },
     
     onConnected : function() {
@@ -117,9 +117,9 @@ function(dojo,declare,lang,_Widget,_TemplatedMixin,cookie,cache,ComboBox,Button,
     
     onDisconnected : function() {
         // Show and hide the relevant portions of the widget
-        this.dropdown.setDisabled(false);
-        this.connectButton.setDisabled(false);
-        this.connectButton.setLabel("Connect");
+        this.dropdown.set('disabled',false);
+        this.connectButton.set('disabled',false);
+        this.connectButton.set('label',"Connect");
         dojo.style(this.connectButton.domNode, "display", "");
         dojo.style(this.disconnectButton.domNode, "display", "none");
         
@@ -130,9 +130,9 @@ function(dojo,declare,lang,_Widget,_TemplatedMixin,cookie,cache,ComboBox,Button,
     
     onUnableToConnect : function() {
         // Show and hide the relevant portions of the widget
-        this.dropdown.setDisabled(false);
-        this.connectButton.setDisabled(false);
-        this.connectButton.setLabel("Connect");
+        this.dropdown.set('disabled',false);
+        this.connectButton.set('disabled',false);
+        this.connectButton.set('label',"Connect");
         dojo.style(this.connectButton.domNode, "display", "");
         dojo.style(this.disconnectButton.domNode, "display", "none");
         

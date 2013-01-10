@@ -38,7 +38,7 @@ function(declare, lang,widgetbase,_TemplatedMixin,dom,domClass,template)
 
             onConnect : function() {
         		for (var i = 0; i < this.buttons.length; i++) {
-		        	this.buttons[i].setDisabled(false);
+		        	this.buttons[i].set('disabled',false);
         		}
                 this.pubTimer = window.setInterval(lang.hitch(this,this.pub),500);
 
@@ -49,7 +49,7 @@ function(declare, lang,widgetbase,_TemplatedMixin,dom,domClass,template)
 
             onClose : function() {
         		for (var i = 0; i < this.buttons.length; i++) {
-		        	this.buttons[i].setDisabled(true);
+		        	this.buttons[i].set('disabled',true);
         		}
                 window.clearInterval(this.pubTimer);
 
@@ -68,7 +68,7 @@ function(declare, lang,widgetbase,_TemplatedMixin,dom,domClass,template)
             	this.buttons.push(this.createButton(this.turnrightAttach, "Turn Right", 39));
 
         		  for (var i = 0; i < this.buttons.length; i++) {
-		        	  this.buttons[i].setDisabled(true);
+		        	  this.buttons[i].set('disabled',true);
           		}
 
 
