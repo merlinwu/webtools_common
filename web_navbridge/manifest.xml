@@ -1,0 +1,16 @@
+<package>
+  <description brief="web_navbridge">
+
+     web_navbridge
+
+  </description>
+  <author>Jihoon</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/web_navbridge</url>
+  <depend package="rospy"/>
+  <depend package="actionlib_msgs"/>
+  <depend package="move_base_msgs"/>
+</package>
+
+
