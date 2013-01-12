@@ -38,14 +38,11 @@
 <body class="claro" style="font: 14px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;">
 	<div id="headers" class="headers">
     <img class="logo" src="img/logo.jpg"></img>
-    <p class="logo2"> Web Teleop</p>
-    <div class="webtools">
-        <div class="connectionpanel" data-dojo-type="rosdojo.widgets.ConnectionPanel"></div>
-    </div>
+    <p class="logo2"> MjpegViewer</p>
 	</div>
     <div id="body" class="middlepanel">
       <center>
-        <div data-dojo-type="rosdojo.widgets.MjpegViewer" data-dojo-props="topic:'/camera/rgb/image_color', width:512, height:384, quality:70">
+        <div data-dojo-type="rosdojo/widgets/MjpegViewerWrapper" data-dojo-props="width:800, height:600, quality:70">
         </div>
       </center>
     </div>
