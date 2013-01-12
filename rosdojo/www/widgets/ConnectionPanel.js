@@ -6,8 +6,8 @@
  */
 
 require({ packages: [
-            { name : "rosdojo", location:"/rosdojo"},
-            { name : "rosjs", location:"/robotwebtools_amd/rosjs"}
+            { name : "rosdojo", location:"rosdojo"},
+            { name : "rosjs", location:"robotwebtools_amd/rosjs"}
             ]
         });
 

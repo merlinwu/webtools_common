@@ -5,7 +5,7 @@
  */
 
 require({ packages: [
-            { name : "mjpegcanvasjs", location:"/robotwebtools_amd/mjpegcanvasjs"}
+            { name : "mjpegcanvasjs", location:"robotwebtools_amd/mjpegcanvasjs"}
             ]
         });
 
