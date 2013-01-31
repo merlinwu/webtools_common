@@ -6,7 +6,7 @@ dojoConfig = {
   async: true,
 
   parseOnLoad: false,
-  baseUrl: "/web",
+  baseUrl: "/",
 
   aliases: [
     [ "eventemitter2","rosjs/dist/eventemitter2"],
